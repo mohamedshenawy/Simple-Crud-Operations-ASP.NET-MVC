@@ -1,0 +1,42 @@
+﻿@using Crud_Operations.Models
+@model Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        @using (Html.BeginForm())
+        {
+            <div class="mb-3">
+                <label class="form-label">ID</label>
+                @Html.TextBoxFor(i => i.ID, new { @class = "form-control" })
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                @Html.TextBoxFor(i => i.Name, new { @class = "form-control" })
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Age</label>
+                @Html.TextBoxFor(i => i.Age, new { @class = "form-control" })
+            </div>
+            <div class="mb-3">
+                @Html.RadioButtonFor(i => i.Gender, "male") male
+                @Html.RadioButtonFor(i => i.Gender, "female")female
+            </div>
+            <input type="submit" value="create" class="btn btn-primary" />
+
+        }
+        
+    </div>
+</body>
+</html>
